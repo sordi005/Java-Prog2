@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+group 'com.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+// En build.gradle
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+dependencies {
+    // MySQL Connector
+    implementation 'mysql:mysql-connector-java:8.0.33'
+
+}
+
+application {
+    mainClassName = 'com.example.practico9'
+}
+
+test {
+    useJUnitPlatform()
+}
